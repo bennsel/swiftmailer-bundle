@@ -60,7 +60,6 @@ final class MessageDataCollector extends DataCollector
                     ];
 
                     foreach ($logger->getMessages() as $message) {
-                        $message->__contentType = $message->getBodyContentType();
                         $message->__base64EncodedBody = base64_encode($message->getBody());
                         if ('text/plain' === $message->__contentType) {
                             foreach ($message->getChildren() as $child) {
